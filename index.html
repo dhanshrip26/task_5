@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Capstone Shop</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Capstone e-commerce demo — products, cart, responsive, optimized." />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Capstone Shop</h1>
+      <div class="controls">
+        <input id="search" type="search" placeholder="Search products..." aria-label="Search products">
+        <button id="cartBtn" aria-haspopup="dialog">Cart (<span id="cartCount">0</span>)</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="productList" class="product-grid" aria-live="polite"></section>
+  </main>
+
+  <!-- Cart modal -->
+  <dialog id="cartModal" aria-label="Shopping cart">
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <div class="cart-footer">
+      <div>Total: ₹<span id="cartTotal">0</span></div>
+      <button id="checkoutBtn">Checkout</button>
+      <button id="closeCart">Close</button>
+    </div>
+  </dialog>
+
+  <template id="productCard">
+    <article class="card" role="article">
+      <img class="prod-img" alt="" loading="lazy">
+      <div class="card-body">
+        <h3 class="prod-title"></h3>
+        <p class="prod-price"></p>
+        <div class="card-actions">
+          <button class="addBtn">Add to cart</button>
+          <button class="viewBtn">View</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
